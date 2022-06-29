@@ -19,5 +19,19 @@ public class PosterManager {
         return all;
     }
 
+    public String[] findLast() {                            // Обратный порядок
+        int resultLength;
+        if (films.length < limit) {
+            resultLength = films.length;
+        } else {
+            resultLength = limit;
+        }
+        String[] all = new String[resultLength];
+        for (int i = 0; i < all.length; i++) {
+            all[i] = films[films.length - i - 1];
+        }
+        return all;
+    }
+
 }
 
