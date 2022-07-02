@@ -6,6 +6,15 @@ import org.example.src.Item.PosterItem;
 public class PosterRepository {
 
     private PosterItem[] items = new PosterItem[0];
+    private int limit;
+
+    public PosterRepository(int limit) {
+        this.limit = limit;
+    }
+
+    public PosterRepository() {
+        limit = 10;
+    }
 
     public void addNewFilm(PosterItem item) {
         PosterItem[] tmp = new PosterItem[items.length + 1];
@@ -50,4 +59,19 @@ public class PosterRepository {
     }
 
 
+    public PosterItem[] findLast() {                          // Обратный порядок
+        int resultLength;
+        if (items.length < limit) {
+            resultLength = items.length;
+        } else {
+            resultLength = limit;
+        }
+        PosterItem[] all = new PosterItem[resultLength];
+        for (int i = 0; i < all.length; i++) {
+            all[i] = items[items.length - i - 1];
+        }
+        return all;
+
+    }
 }
+

@@ -12,14 +12,16 @@ public class PosterItem {
         this.posterName = posterName;
     }
 
+    public PosterItem(){
+
+    }
+
     public int getId() {
         return id;
     }
 
-//    public void setId(int id) {
-//        this.id = id;
-//    }
-
-
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 
